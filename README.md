@@ -25,18 +25,18 @@
             store.dispatch(actionObject);
             store.dispatch(actionObject);
             store.dispatch(actionObject);
-- When dispatching multiple actions --> reduce repitition --> Use an ACTION CREATORS
-- ACTION CREATORS also show the actions available to dispatch to the store
+- Dispatching multiple actions --> reduce repitition --> Instead Use ACTION CREATORS
+- ACTION CREATORS show the actions available to dispatch to the store
   
-        export const actionType = ( ) => {       --> ACTION CREATOR
-          return { type: "actionType" };        --> functions that return action 
+        export const actionTypeName = ( ) => {       --> [ ACTION CREATOR ]
+          return { type: "actionTypeName" };        --> functions that return action 
         }                                   --> objects with a property of type
 
-        store.dispatch(actionCreator());
-               
-        store.dispatch(toggle( )); // Toggles the light to 'off'
-        store.dispatch(toggle( )); // Toggles the light back to 'on'
-        store.dispatch(toggle( )); // Toggles the light back to 'off'
+#### Replace for the above three action Objects dispatched
+            store.dispatch(actionCreator());
+            store.dispatch(actionCreator());
+            store.dispatch(actionCreator());
+
 ### RESPOND TO CHANGES
 
 - Actions dispatched to the 'store' are listened for and responded to with 'store.subscribe( )'
