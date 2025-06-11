@@ -14,9 +14,9 @@
 - 'createStore(reducerFunction)' a redux helper function creates a store object = 'store'
 - The store enforces one-way data flow and provides methods
 ### DISPATCH ACTIONS
-- One method dispatches action to the store to update state
-    - store.dispatch(actionObject) --> executes reducer function
-- EXECUTE
+- store.dispatch() --> dispatches action to the store for a state change
+    - store.dispatch(actionObject) --> this executes the reducer function
+##### EXECUTE
       --> store.dispatch({ type: 'toggle'}) --> dispatches an action
       --> then store calls the reducer like so:
             --> reducer(store.getState(), { type:'toggle'})
@@ -26,7 +26,7 @@
             store.dispatch(actionObject);
             store.dispatch(actionObject);
 - When dispatching multiple actions --> reduce repitition --> Use an ACTION CREATORS
-- action creators also show actions available to dispatch to the store
+- ACTION CREATORS also show the actions available to dispatch to the store
   
         export const actionType = () => {       --> ACTION CREATOR
           return { type: "actionType" };        --> functions that return action 
@@ -37,4 +37,8 @@
         store.dispatch(toggle()); // Toggles the light to 'off'
         store.dispatch(toggle()); // Toggles the light back to 'on'
         store.dispatch(toggle()); // Toggles the light back to 'off'
-     
+### RESPOND TO CHANGES
+
+- Actions dispatched to the 'store' are listened for and responded to with 'store.subscribe()'
+- 'store.subscribe(listenerFunction)' --> Subscribes the Listener Function to the store
+- 'store.subscribe()' it also returns an unscribe function to stop listening to store changes
