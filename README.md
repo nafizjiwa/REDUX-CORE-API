@@ -22,16 +22,18 @@
             --> reducer(store.getState(), { type:'toggle'})
             --> reducer gets current state and use it with action type to change state
 ### ACTION CREATORS
-            store.dispatch({Type:'toggle'});
-            store.dispatch({type:'toggel'});
-            store.dispatch({typo:'toggle'});
+            store.dispatch(actionObject);
+            store.dispatch(actionObject);
+            store.dispatch(actionObject);
 - When dispatching multiple actions --> reduce repitition --> Use an ACTION CREATORS
 - action creators also show actions available to dispatch to the store
   
-        export const toggle = () => {       --> ACTION CREATOR
-          return { type: "toggle" };        --> functions that return action 
-        }                                   --> objects with a property of type 
-        
+        export const actionType = () => {       --> ACTION CREATOR
+          return { type: "actionType" };        --> functions that return action 
+        }                                   --> objects with a property of type
+
+        store.dispatch(actionCreator());
+               
         store.dispatch(toggle()); // Toggles the light to 'off'
         store.dispatch(toggle()); // Toggles the light back to 'on'
         store.dispatch(toggle()); // Toggles the light back to 'off'
