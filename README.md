@@ -13,7 +13,6 @@
 - The action object describes how to change the state with its type property
 - 'createStore(reducerFunction)' a redux helper function creates a store object = 'store'
 - The store enforces one-way data flow and provides methods
-- 
 ### DISPATCH ACTIONS
 - One method dispatches action to the store to update state
     - store.dispatch(actionObject) --> executes reducer function
@@ -28,6 +27,7 @@
             store.dispatch({typo:'toggle'});
 - When dispatching multiple actions --> reduce repitition --> Use an ACTION CREATORS
 - action creators also show actions available to dispatch to the store
+  
         const toggle = () => {              --> ACTION CREATOR
           return { type: "toggle" };        --> functions that return action 
         }                                   --> objects with a property = type
