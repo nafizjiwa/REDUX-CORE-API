@@ -28,9 +28,10 @@
 - When dispatching multiple actions --> reduce repitition --> Use an ACTION CREATORS
 - action creators also show actions available to dispatch to the store
   
-        const toggle = () => {              --> ACTION CREATOR
+        export const toggle = () => {       --> ACTION CREATOR
           return { type: "toggle" };        --> functions that return action 
-        }                                   --> objects with a property = type
+        }                                   --> objects with a property of type 
+        
         store.dispatch(toggle()); // Toggles the light to 'off'
         store.dispatch(toggle()); // Toggles the light back to 'on'
         store.dispatch(toggle()); // Toggles the light back to 'off'
