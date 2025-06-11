@@ -11,16 +11,16 @@
 
 - Reducer functions decide which action updates the state.
 - The action object describes how to change the state with its type property
-- 'createStore(reducerFunction)' a redux helper function creates a store object = 'store'
+- `createStore(reducerFunction)` a redux helper function creates a store object = 'store'
 - The store enforces one-way data flow and provides methods
 ### DISPATCH ACTIONS
-- store.dispatch( ) --> dispatches action to the store for a state change
-      `store.dispatch(actionObject) --> this executes the reducer function`
-##### EXECUTE
-      --> store.dispatch({ type: 'toggle'}) --> dispatches an action
-      --> then store calls the reducer like so:
-            --> reducer(store.getState( ), { type:'toggle'})
-            --> reducer gets current state and use it with action type to change state
+- store.dispatch( ) --> dispatches action to the store to change state
+      `store.dispatch(actionObject) --> with an AO the reducer function executed`
+    ##### EXECUTE
+      -->1st store.dispatch({ type: 'toggle'}) --> dispatches the action
+      -->2nd Then store calls the reducer like so:
+            `reducer(store.getState( ),{ type:'toggle'})`
+            --> reducer receives current state and action type to change state
 ### ACTION CREATORS
             store.dispatch(actionObject);
             store.dispatch(actionObject);
