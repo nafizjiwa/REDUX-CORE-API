@@ -7,11 +7,12 @@
     - stote.dispatch(action)
     - store.subsribe(listener)
 
-//Redux apps use Reducer functions to decide which action updates the state to the next state.
-//The store enforces one-way data flow 
-//store=createStore(reducerFunction) 'a redux helper function' creates a store object
-//One method dispatches action to the store to update state
-//store.dispatch(actionObject)
-//The action object describes how to change the state with its type property
-// First, Import createStore here
+- Reducer functions to decide which action updates the state.
+- The action object describes how to change the state with its type property
+- The store enforces one-way data flow 
+- store=createStore(reducerFunction) 'a redux helper function' creates a store object
+- One method dispatches action to the store to update state
+    - store.dispatch(actionObject)
+
+
 
