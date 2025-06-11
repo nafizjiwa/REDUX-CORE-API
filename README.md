@@ -41,6 +41,7 @@
 
 - Actions dispatched to the 'store' are listened for and responded to with 'store.subscribe( )'
 - 'store.subscribe(listenerFunction)' --> Subscribes the Listener Function to the store
-
+  
+    Action creators can be passed directly to the store.dispatch()
           store.dispatch(actionCreator());
 - 'store.subscribe( )' also returns an unsubscribe function to stop listening to store changes or dispatches made to the store
