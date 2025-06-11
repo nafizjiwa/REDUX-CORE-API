@@ -28,9 +28,9 @@
 - Dispatching multiple actions --> reduce repitition --> Instead Use ACTION CREATORS
 - ACTION CREATORS show the actions available to dispatch to the store
   
-        export const actionTypeName = ( ) => {       --> [ ACTION CREATOR ]
-          return { type: "actionTypeName" };        --> functions that return action 
-        }                                   --> objects with a property of type
+      export const actionTypeName = ( ) => {       --> [ ACTION CREATOR ]
+        return { type: "actionTypeName" };        --> functions that return action 
+       }                                   --> objects with a property of type
 
 #### Replace for the above three action Objects dispatched
             store.dispatch(actionCreator());
