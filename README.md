@@ -1,7 +1,7 @@
 # Redux-API
 
 - Is an application that follows the core principles of Redux built without a Redux Library
-- Libraries do provide useful tools for building a Redux application while following Redux core principles.
+- Libraries provide tools for building a Redux apps while following Redux core principles.
 - One tool from the Redux API is the createStore() method and its methods
     - store.getState()
     - stote.dispatch(action)
