@@ -3,7 +3,7 @@
 - Is an application that follows the core principles of Redux built without a Redux Library
 - Libraries provide tools for building a Redux apps while following Redux core principles
 
-### STORE
+### CREATE A REDUX STORE
 - Create a Redux App with a Redux API tool called createStore() method and its methods
     - store.getState( )              --> returns current value of the state
     - stote.dispatch(action)         --> dispatches action to the store
@@ -12,8 +12,12 @@
 - Reducer functions describes which action can update the state.
 - The action (action object) describes how to change the state with its type property
 - `createStore(reducerFunction)` a redux helper function creates a store object = 'store'
-- The store enforces one-way data flow and provides methods
-### DISPATCH ACTIONS
+- The store ,an object, which enforces one-way data flow
+          1. Holds state,
+          2. Receives action dispatches and
+          3. Executes the reducer.
+- 
+### DISPATCH ACTIONS TO THE STORE
 - store.dispatch( ) --> dispatches an action to the store to change the state
 - `store.dispatch(actionObject) --> with an AO the reducer function executed`
   
