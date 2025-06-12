@@ -42,11 +42,13 @@
 
 ### RESPOND TO STATE CHANGES
 
-- `store.subscribe( )` - Method used by the store to Listen and Respond to dispatched Actions 
-- `store.subscribe(listenerFunction)` --> Subscribes the Listener Function to the store
-        - State Change Listener is then executed whenever stores state changes
+- `store.subscribe( )` - Method used by the store to Listen and Respond to dispatched Actions
   
-        Action creators can be passed directly to the store.dispatch()
+    `store.subscribe(changeListenerFunction)` --> Subscribes the Listener to the store
+- State Change Listener is then executed whenever stores state changes
+  
+- Then when Action creator is passed directly to the store.dispatch() the creator executes
               store.dispatch(actionCreator());
+  
 - 'store.subscribe( )' also returns an unsubscribe function which allow the listener to stop listening to store changes or dispatches made to the store
-- - 
+
