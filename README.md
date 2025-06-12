@@ -15,7 +15,7 @@
 - The store enforces one-way data flow and provides methods
 ### DISPATCH ACTIONS
 - store.dispatch( ) --> dispatches an action to the store to change the state
-      `store.dispatch(actionObject) --> with an AO the reducer function executed`
+-    `store.dispatch(actionObject) --> with an AO the reducer function executed`
     ##### EXECUTE
       -->1st store.dispatch({ type: 'toggle'}) --> dispatches the action
       -->2nd Then store calls the reducer like so:
