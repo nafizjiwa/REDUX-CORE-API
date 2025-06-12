@@ -10,7 +10,7 @@
     - store.subsribe(listener)
 
 - Reducer functions decide which action updates the state.
-- The action object describes how to change the state with its type property
+- The action (action object) describes how to change the state with its type property
 - `createStore(reducerFunction)` a redux helper function creates a store object = 'store'
 - The store enforces one-way data flow and provides methods
 ### DISPATCH ACTIONS
@@ -22,9 +22,9 @@
             `reducer(store.getState( ),{ type:'toggle'})`
             --> reducer receives current state and action type to change state
 ### ACTION CREATORS
-            store.dispatch(actionObject);
-            store.dispatch(actionObject);
-            store.dispatch(actionObject);
+            store.dispatch(action);
+            store.dispatch(action);
+            store.dispatch(action);
 - Dispatching multiple actions --> reduce repitition --> Instead Use ACTION CREATORS
 - ACTION CREATORS show the actions available to dispatch to the store
   
@@ -37,11 +37,13 @@
             store.dispatch(actionCreator());
             store.dispatch(actionCreator());
 
-### RESPOND TO CHANGES
+### RESPOND TO STATE CHANGES
 
-- Actions dispatched to the 'store' are listened for and responded to with `store.subscribe( )`
+- `store.subscribe( )` - Method used by the store to Listen and respond to dispatched Actions 
 - `store.subscribe(listenerFunction)` --> Subscribes the Listener Function to the store
+        - Listener is then executed whenever stores state changes
   
         Action creators can be passed directly to the store.dispatch()
               store.dispatch(actionCreator());
-- 'store.subscribe( )' also returns an unsubscribe function to stop listening to store changes or dispatches made to the store
+- 'store.subscribe( )' also returns an unsubscribe function which allow the listener to stop listening to store changes or dispatches made to the store
+- - 
