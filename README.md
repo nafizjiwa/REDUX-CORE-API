@@ -4,12 +4,12 @@
 - Libraries provide tools for building a Redux apps while following Redux core principles
 
 ### STORE
-- One tool from the Redux API is the createStore() method and its methods
+- Create a Redux App with a Redux API tool called createStore() method and its methods
     - store.getState( )              --> returns current value of the state
     - stote.dispatch(action)         --> dispatches action to the store
     - store.subsribe(listener)
 
-- Reducer functions decide which action updates the state.
+- Reducer functions describes which action can update the state.
 - The action (action object) describes how to change the state with its type property
 - `createStore(reducerFunction)` a redux helper function creates a store object = 'store'
 - The store enforces one-way data flow and provides methods
