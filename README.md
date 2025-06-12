@@ -15,25 +15,26 @@
 - The store enforces one-way data flow and provides methods
 ### DISPATCH ACTIONS
 - store.dispatch( ) --> dispatches an action to the store to change the state
--    `store.dispatch(actionObject) --> with an AO the reducer function executed`
-    ##### EXECUTE
+- `store.dispatch(actionObject) --> with an AO the reducer function executed`
+  
+  ##### EXECUTE
       -->1st store.dispatch({ type: 'toggle'}) --> dispatches the action
       -->2nd Then store calls the reducer like so:
             `reducer(store.getState( ),{ type:'toggle'})`
             --> reducer receives current state and action type to change state
 ### ACTION CREATORS
-- THEY RETURN AN ACTION OBJECT:
-- 
-            store.dispatch(action);
-            store.dispatch(action);
-            store.dispatch(action);
-- Avoid writing identical multiple action objects as above --> USE AN ACTION CREATOR
+- They reduce the repetitive creation of action objects
+          store.dispatch(actionObject1);
+          store.dispatch(actionObject1);
+          store.dispatch(actionObject1);
+- Avoid writing multiple identical action objects --> USE AN ACTION CREATOR
+- THEY RETURN AN ACTION OBJECT</br>
 
-    store.dispatch(actionCreator(returns actionObject{type: 'actionObject' }))
+     store.dispatch(ACTION_CREATOR(returns ActionObject {type: 'actionObject' }))
   
-      export const actionCreator = ( ) => {       --> [ ACTION CREATOR ]
-        return { type: "actionType" };        --> functions that return action 
-       }                                   --> objects with a type property
+      export const ACTION_CREATOR = ( ) => {       --> functions that
+        return { type: "actionType" };             --> return an action object
+       }                                           --> with a type property
 
 #### Replace for the above three action Objects dispatched
             store.dispatch(actionCreator());
@@ -42,14 +43,36 @@
 
 ### RESPOND TO STATE CHANGES
 
-- `store.subscribe( )` - Method used by the store to Listen and Respond to dispatched Actions
+    `store.subscribe(listener)`
+- Register a State Change Listener to the store so it can respond to
+- Dispatched actions and changes to the store
   
-    `store.subscribe(changeListenerFunction)` --> Subscribes the Listener to the store
-- State Change Listener is then executed whenever state changes in the store
+      store.subscribe(stateChangeListenerFunction)
+- This connection allows the listener to automatically fire everytime state changees
   
 - Then when Action creator is passed directly to the store.dispatch() the creator executes
   
-              store.dispatch(actionCreator());
+          store.dispatch(actionCreator());
   
-- 'store.subscribe( )' also returns an unsubscribe function which allow the listener to stop listening to store changes or dispatches made to the store
+- The 'store.subscribe( )' also returns an unsubscribe function which allows the listener to stop listening to dispatches to the store just call it
+  
+          unsubscribe()
+### EXAMPLE
+// Define your change listener function.
+
+       const printCountStatus=()=>{
+          console.log(`The count is ${store.getState()}`);
+        }
+// Subscribe change listener function to the store 
+
+        store.subscribe(printCountStatus)
+// Dispatch the actions to the store</br>
+// Check their changes in state</br> 
+
+    store.dispatch(decrement()); 
+        // Listener fires so console --> The count is -1
+    store.dispatch(increment());
+        // Listener fires so console --> The count is 0
+    store.dispatch(increment());
+        // Listener fires so console --> The count is 1
 
