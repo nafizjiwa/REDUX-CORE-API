@@ -22,15 +22,17 @@
             `reducer(store.getState( ),{ type:'toggle'})`
             --> reducer receives current state and action type to change state
 ### ACTION CREATORS
+- THEY RETURN AN ACTION OBJECT:
             store.dispatch(action);
             store.dispatch(action);
             store.dispatch(action);
-- Dispatching multiple actions --> reduce repitition --> Instead Use ACTION CREATORS
-- ACTION CREATORS show the actions available to dispatch to the store
+- Avoid writing identical multiple action objects as above --> USE AN ACTION CREATOR
+
+    store.dispatch(actionCreator(returns actionObject{type: 'actionObject' }))
   
       export const actionTypeName = ( ) => {       --> [ ACTION CREATOR ]
         return { type: "actionTypeName" };        --> functions that return action 
-       }                                   --> objects with a property of type
+       }                                   --> objects with a type property
 
 #### Replace for the above three action Objects dispatched
             store.dispatch(actionCreator());
@@ -39,9 +41,9 @@
 
 ### RESPOND TO STATE CHANGES
 
-- `store.subscribe( )` - Method used by the store to Listen and respond to dispatched Actions 
+- `store.subscribe( )` - Method used by the store to Listen and Respond to dispatched Actions 
 - `store.subscribe(listenerFunction)` --> Subscribes the Listener Function to the store
-        - Listener is then executed whenever stores state changes
+        - State Change Listener is then executed whenever stores state changes
   
         Action creators can be passed directly to the store.dispatch()
               store.dispatch(actionCreator());
