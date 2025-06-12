@@ -31,8 +31,8 @@
 
     store.dispatch(actionCreator(returns actionObject{type: 'actionObject' }))
   
-      export const actionTypeName = ( ) => {       --> [ ACTION CREATOR ]
-        return { type: "actionTypeName" };        --> functions that return action 
+      export const actionCreator = ( ) => {       --> [ ACTION CREATOR ]
+        return { type: "actionType" };        --> functions that return action 
        }                                   --> objects with a type property
 
 #### Replace for the above three action Objects dispatched
