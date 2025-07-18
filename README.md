@@ -1,7 +1,12 @@
 # REDUX-CORE-API
 
-- Is an application that follows the core principles of Redux built without a Redux Library
-- Libraries provide tools for building a Redux apps while following Redux core principles
+- An application that follows the core principles of Redux built without a Redux Library
+- Libraries provide tools for building a Redux app that follow Redux core principles
+- Redux apps are built on one way flow of data managed by the store
+    - STATE
+    - ACTIONS (an object to change state) DISPATCHED by user interacting with UI
+    - STORE GENERATES NEXT STATE with reducer function
+    - UI rendered with new state of the store
 
 ### CREATE A REDUX STORE
 - Create a Redux App with a Redux API tool called createStore() method and its methods
