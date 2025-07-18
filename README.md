@@ -1,4 +1,4 @@
-# REACT-Redux-API
+# REDUX-CORE-API
 
 - Is an application that follows the core principles of Redux built without a Redux Library
 - Libraries provide tools for building a Redux apps while following Redux core principles
