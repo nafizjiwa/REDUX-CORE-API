@@ -22,18 +22,14 @@
     - connect
 
 ### CREATE A REDUX STORE
-- Create a Redux App with a Redux API tool called createStore() method and its methods
-    - store.getState( )              --> returns current value of the state
-    - stote.dispatch(action)         --> dispatches action to the store
-    - store.subsribe(listener)
-
+- With a Redux API tool called createStore() 
 - Reducer functions describes how a state is updated with actions and returns the next state of the store.
 - The action (action object) describes how to change the state using its type property
-- Store's function - execute the reducer with state and action
-                  - enfores on way data flow
+- Store's function - execute the reducer with a state and an action
+                   - enforces one way data flow
   
-    --Manually do what the store does--
-    newState = callReducerFunction(withCurrentState, { type: 'andAction' });
+        --Manually do what the store does--
+        newState = callReducerFunction(withCurrentState, { type: 'andAction' });
 
 #### Redux helper Function
 - `createStore(takesInReducerFunction)` -  to create a 'store'
@@ -43,8 +39,11 @@
           3. Executes the reducer.
 - 
 ### DISPATCH ACTIONS TO THE STORE
-- store.dispatch( ) --> dispatches an action to the store to change the state
-- `store.dispatch(actionObject) --> with an AO the reducer function executed`
+- Create a Redux App with a Redux API tool called createStore() method and its methods
+    - `store.getState( )`              --> returns current value of the state
+    - `store.dispatch(action)`        --> dispatches action to the store to change the state
+    - `store.subsribe(listener/actionObject)`   --> With an AO the reducer function executed`
+
   
   ##### EXECUTE
       -->1st store.dispatch({ type: 'toggle'}) --> dispatches the action
