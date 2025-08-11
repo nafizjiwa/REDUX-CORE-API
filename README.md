@@ -27,10 +27,17 @@
     - stote.dispatch(action)         --> dispatches action to the store
     - store.subsribe(listener)
 
-- Reducer functions describes which action can update the state.
-- The action (action object) describes how to change the state with its type property
-- `createStore(reducerFunction)` a redux helper function creates a store object = 'store'
-- The store ,an object, which enforces one-way data flow
+- Reducer functions describes how a state is updated with actions and returns the next state of the store.
+- The action (action object) describes how to change the state using its type property
+- Store's function - execute the reducer with state and action
+                  - enfores on way data flow
+  
+    --Manually do what the store does--
+    newState = callReducerFunction(withCurrentState, { type: 'andAction' });
+
+#### Redux helper Function
+- `createStore(takesInReducerFunction)` -  to create a 'store'
+- Store - is an object
           1. Holds state,
           2. Receives action dispatches and
           3. Executes the reducer.
