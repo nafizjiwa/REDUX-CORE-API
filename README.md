@@ -26,24 +26,36 @@
 - createStore() is a Redux API tool 
 - A Reducer functions updates State. It receives actions --> returns the store's next state.
 - The action object describes how to change the state
-- Store's function - execute the reducer 
-                   - enforces one way data flow
+- Store's function - Holds state
+                   - Receives dispatched action
+                   - Execute the reducer
+                   - Enforces one way data flow
   
         --Manually do what the store does execute Reducer--
         newState = callReducerFunction(withCurrentState, { type: 'andAction' });
 
 #### The Redux helper Function to Create a Store
-- 1st Import the funciton:
+- Store's structure:
 
-        import { createStore } from 'redux';
-- 2nd Call it to create a 'store' object
+        import { createStore } from 'redux';   --> 1st Import helper funciton:
+          const initialState = 0                 --> 3rd render initialState
+          export function ActionCreatorName() {     --> 4th Create + export Action Creators
+              return {type: `actiontype`}
+          }
+          const reducerName = (state=initialState, action) => {
+              switch(action.type){
+                  case'1':{                            --> 5th Create reducer with
+                      return updatedState;                    types of actions
+                  }
+                  default: {
+                      return state;
+                  }
+              }
+          }
+         export const store = createStore(takesInREDUCER_FUNCTION)
+          --> 2nd Create a 'store' object with a call
 
-        export const store = createStore(takesInREDUCER_FUNCTION)
-- Store: </br>
-          1. Holds state, </br>
-          2. Receives action dispatched and </br>
-          3. Executes the reducer. </br>
- 
+
 ### 3. DISPATCH ACTIONS TO THE STORE
 - A Redux App created with Redux API tool createStore() method has access to other `STORE` methods of state
     - `store.getState( )`              --> returns current value of the state
@@ -77,15 +89,15 @@
         
 ### 5. RESPOND TO STATE CHANGES
 - Applications with user interaction triggering DOM events as a 'click' are listened to by event listeners.
-- In REDUX a dispatched action of a store are listened to using this method:
+- In REDUX a dispatched action of a store is listened to using this method:
 
     `store.subscribe(accepts_a_listener_argument)`
 - When an action is dispatched to the `store` a change in state occurs and the listener is executed
   
       store.subscribe(stateChangeListenerFunction)
-- This connection allows the listener to automatically fire everytime state changees
+- The LISTENER is firee everytime state changes
   
-- Then when Action creator is passed directly to the store.dispatch() the creator executes
+- To execute an Action creator pass it to the store.dispatch():
   
           store.dispatch(actionCreator());
   
@@ -94,6 +106,9 @@
   
           unsubscribe()
 ### EXAMPLE
+##### - 1st import store and action creators from store.js file to main.js file
+
+    import { store, increment, decrement } from "./store"
 // Define your change listener function.
 
        const printCountStatus=()=>{
@@ -109,6 +124,7 @@
         // Listener fires so console --> The count is -1
     store.dispatch(increment());
         // Listener fires so console --> The count is 0
-    store.dispatch(increment());
-        // Listener fires so console --> The count is 1
+        
+### 6. CONNECT A REDUX STORE TO A UI
+-REDUX without REACT lacks a user interface
 
