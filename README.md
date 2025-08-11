@@ -127,33 +127,41 @@
         
 ### 6. CONNECT A REDUX STORE TO A UI
 -REDUX without REACT lacks a user interface
-- TO CONNECT A STORE TO REACT SO THAT REACT CAN MANGE STATE AND THEN SHOW THE
-- CHANGES TO THE STATE TO THE USER
+- TO CONNECT A STORE TO REACT SO THAT REACT CAN MANGE STATE AND THEN SHOW THE USER
+
 -App.js-file
 
-    Store's action creators imported in
-        import { actionCreator1, actionCreator2 } from "./store";
-    Action creators are dispatched within click handlers if a buttons exist
-        const clickHandlerFunction = () => {
-                dispatch(actionCreator1());
-          }
-    App component expects 2 props: state and dispatch passed from index.js
-        function App({ state, dispatch}) {
-                return ( code to render here )
-            }
+        Store's action creators imported in
+            import { actionCreator1, actionCreator2 } from "./store";
+        Action creators are dispatched within click handlers if a buttons exist
+            const clickHandlerFunction = () => {
+                    dispatch(actionCreator1());
+              }
+        App component expects 2 props: state and dispatch passed from index.js
+            function App({ state, dispatch}) {
+                    return ( code to render here )
+                }
 -index.js-file
 
-    Store is imported in --> import { store } from './store.js'
-    Pass store and dispatch to App
-    <App state={store.getState()} dispatch={store.dispatch} />);
-    Subscribe a change listerner to the store 
-            - so the UI is updated when state changes
-            - subscribe the index.js render()
-            - so App is always re-rendered when changes to state which
-            - can update the UI for the user to see changes
-    store.subscribe(listener); --> listener here is the render function
-    store.subscribe(render);
+        Store is imported in --> import { store } from './store.js'
+        Pass store and dispatch to App
+        <App state={store.getState()} dispatch={store.dispatch} />);
+        Subscribe a change listerner to the store 
+                - so the UI is updated when state changes
+                - subscribe the index.js render()
+                - so App is always re-rendered when changes to state which
+                - can update the UI for the user to see changes
+        store.subscribe(listener); --> listener here is the render function
+        store.subscribe(render);
 
   |REVIEW|NOTES|
   |:---|:---|
-  |||
+  | Redux library's createStore( )| Creates a store object|
+  ||Holds the state|
+  |Stores Methods:| store.getState() - gets current state|
+  ||store.disptach(action) - dispatches action to store|
+  ||store.subscribe(listener) - registers a function to respond to store changes |
+  |actionCreators|creates multiple action objects|
+  
+  
+  
