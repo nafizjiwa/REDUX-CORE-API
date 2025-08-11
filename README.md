@@ -1,12 +1,25 @@
 # REDUX-CORE-API
 
-- An application that follows the core principles of Redux built without a Redux Library
-- Libraries provide tools for building a Redux app that follow Redux core principles
-- Redux apps are built on one way flow of data managed by the store
-    - STATE
-    - ACTIONS (an object to change state) DISPATCHED by user interacting with UI
-    - STORE GENERATES NEXT STATE with reducer function
-    - UI rendered with new state of the store
+- Redux Apps follow the core principles of Redux 
+- Redux Library tools help handle an app to follow core principles
+- Redux API refers to functions and tools in the redux ecosystem to manage STATE
+- Redux has core APIs for creating and managing a store, dispatching actions and reducers.
+- Redux Toolkit and React-Redux offer additional APIs 
+- Redux apps use one way data flow managed by the store
+    - STATE->DISPATCHED ACTIONS->STORE's RREDUCER->NEXT STATE
+- CORE REDUX API'S ARE
+    - createStore
+    - combineReducers
+    - applyMiddleware
+- REDUX TOOLKIT API'S ARE
+    - configureStore
+    - createSlice
+    - Query API's
+- REACT REDUX API'S ARE
+    - Provider
+    - useSelector
+    - useDipatch
+    - connect
 
 ### CREATE A REDUX STORE
 - Create a Redux App with a Redux API tool called createStore() method and its methods
