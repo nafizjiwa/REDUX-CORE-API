@@ -22,17 +22,17 @@
     - connect
 
 ### CREATE A REDUX STORE
-- With a Redux API tool called createStore() 
-- Reducer functions describes how a state is updated with actions and returns the next state of the store.
-- The action (action object) describes how to change the state using its type property
-- Store's function - execute the reducer with a state and an action
+- createStore() is a Redux API tool 
+- A Reducer functions updates State. It receives actions --> returns the store's next state.
+- The action object describes how to change the state
+- Store's function - execute the reducer 
                    - enforces one way data flow
   
         --Manually do what the store does--
         newState = callReducerFunction(withCurrentState, { type: 'andAction' });
 
-#### Redux helper Function
-- `createStore(takesInReducerFunction)` -  to create a 'store'
+#### Redux helper Function to Create a Store
+- Call `createStore(takesInReducerFunction)` -  to create a 'store'
 - Store - is an object
           1. Holds state,
           2. Receives action dispatches and
