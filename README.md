@@ -127,4 +127,20 @@
         
 ### 6. CONNECT A REDUX STORE TO A UI
 -REDUX without REACT lacks a user interface
+-App.js-file
 
+    Store's action creators imported
+        import { actionCreator1, actionCreator2 } from "./store";
+    Action creators are dispatched within click handlers if a buttons exist
+        const clickHandlerFunction = () => {
+                dispatch(actionCreator1());
+          }
+    App component expects 2 props: state and dispatch passed from index.js
+        function App({ state, dispatch}) {
+                return ()
+            }
+-index.js-file
+
+    Store is imported --> import { store } from './store.js'
+    Pass store and dispatch to App
+    <App state={store.getState()} dispatch={store.dispatch} />);
