@@ -1,4 +1,4 @@
-# REDUX-CORE-API
+# REDUX-CORE-API-INTRO
 
 - Redux Apps follow the core principles of Redux 
 - Redux Library tools help handle an app to follow core principles
@@ -53,24 +53,22 @@
             `reducer(store.getState( ),{ type:'toggle'})`
             --> reducer receives current state and action type 'toggle' to change state
 ### ACTION CREATORS
-- They reduce the repetitive creation of the same action objects
-          store.dispatch(actionObject1);
-          store.dispatch(actionObject1);
-          store.dispatch(actionObject1);
+- They reduce the repetitive creation of the same action 
+
+          store.dispatch(actionObject1); ---> action object
+          store.dispatch(actionObject1); ---> action object
+          store.dispatch(actionObject1); ---> action object
 - To Avoid writing multiple identical action objects --> USE AN ACTION CREATOR
-- THEY RETURN AN ACTION OBJECT</br>
 
      store.dispatch(ACTION_CREATOR(returns ActionObject {type: 'actionObject' }))
   
       export const ACTION_CREATOR_FUNCTION = ( ) => {       --> functions that
-        return { type: "actionType" };             --> return an ACTION OBJECT
-       }                                           --> with a type property
+        return { type: "actionType" };             --> returns an ACTION OBJECT
+       }                                           --> with a type property = an action type
 
-#### Replace for the above three action Objects dispatched
-            store.dispatch(call_actionCreator());
-            store.dispatch(call_actionCreator());
-            store.dispatch(call_actionCreator());
-
+##### Replace above three action Object dispatches with 3 calls to an action creator
+            store.dispatch(call_actionCreator()) X 3
+        
 ### RESPOND TO STATE CHANGES
 
     `store.subscribe(listener)`
