@@ -53,23 +53,23 @@
             `reducer(store.getState( ),{ type:'toggle'})`
             --> reducer receives current state and action type 'toggle' to change state
 ### ACTION CREATORS
-- They reduce the repetitive creation of action objects
+- They reduce the repetitive creation of the same action objects
           store.dispatch(actionObject1);
           store.dispatch(actionObject1);
           store.dispatch(actionObject1);
-- Avoid writing multiple identical action objects --> USE AN ACTION CREATOR
+- To Avoid writing multiple identical action objects --> USE AN ACTION CREATOR
 - THEY RETURN AN ACTION OBJECT</br>
 
      store.dispatch(ACTION_CREATOR(returns ActionObject {type: 'actionObject' }))
   
-      export const ACTION_CREATOR = ( ) => {       --> functions that
-        return { type: "actionType" };             --> return an action object
+      export const ACTION_CREATOR_FUNCTION = ( ) => {       --> functions that
+        return { type: "actionType" };             --> return an ACTION OBJECT
        }                                           --> with a type property
 
 #### Replace for the above three action Objects dispatched
-            store.dispatch(actionCreator());
-            store.dispatch(actionCreator());
-            store.dispatch(actionCreator());
+            store.dispatch(call_actionCreator());
+            store.dispatch(call_actionCreator());
+            store.dispatch(call_actionCreator());
 
 ### RESPOND TO STATE CHANGES
 
