@@ -45,7 +45,7 @@
           3. Executes the reducer. </br>
  
 ### 3. DISPATCH ACTIONS TO THE STORE
-- A Redux App created with Redux API tool createStore() method has access to other methods of state
+- A Redux App created with Redux API tool createStore() method has access to other `STORE` methods of state
     - `store.getState( )`              --> returns current value of the state
     - `store.dispatch({ type:'action' })`       --> dispatches an action to the store's reducer to change the state
     - `store.subsribe(listener/actionObject)`   --> With an AO the reducer function executed`
