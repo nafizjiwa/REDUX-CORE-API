@@ -60,8 +60,8 @@
           store.dispatch(actionObject1); ---> action object
 - To Avoid writing multiple identical action objects --> USE AN ACTION CREATOR
 
-     store.dispatch(ACTION_CREATOR(returns ActionObject {type: 'actionObject' }))
-  
+      store.dispatch(ACTION_CREATOR_FUNC(returns ActionObject-->{type: 'actionType' }))
+-
       export const ACTION_CREATOR_FUNCTION = ( ) => {       --> functions that
         return { type: "actionType" };             --> returns an ACTION OBJECT
        }                                           --> with a type property = an action type
