@@ -32,24 +32,26 @@
         newState = callReducerFunction(withCurrentState, { type: 'andAction' });
 
 #### Redux helper Function to Create a Store
-- Call `createStore(takesInReducerFunction)` -  to create a 'store'
-- Store - is an object
-          1. Holds state,
-          2. Receives action dispatches and
-          3. Executes the reducer.
-- 
+- Call `const store = createStore(takesInReducerFunction)` -  to create a 'store' object
+- Store - </br>
+          1. Holds state, </br>
+          2. Receives action dispatched and </br>
+          3. Executes the reducer. </br>
+ 
 ### DISPATCH ACTIONS TO THE STORE
-- Create a Redux App with a Redux API tool called createStore() method and its methods
+- A Redux App created with Redux API tool createStore() method has access to other methods of state
     - `store.getState( )`              --> returns current value of the state
-    - `store.dispatch(action)`        --> dispatches action to the store to change the state
+    - `store.dispatch({ type:'action' })`       --> dispatches an action to the store's reducer to change the state
     - `store.subsribe(listener/actionObject)`   --> With an AO the reducer function executed`
+- Store Calling Reducer
 
-  
-  ##### EXECUTE
-      -->1st store.dispatch({ type: 'toggle'}) --> dispatches the action
+        storeReducer(store.getState(), { type: 'toggle' });
+
+  ##### HOW ITS EXECUTED
+      -->1st store.dispatch({ type: 'toggle'}) --> dispatches action of type 'toggle'
       -->2nd Then store calls the reducer like so:
             `reducer(store.getState( ),{ type:'toggle'})`
-            --> reducer receives current state and action type to change state
+            --> reducer receives current state and action type 'toggle' to change state
 ### ACTION CREATORS
 - They reduce the repetitive creation of action objects
           store.dispatch(actionObject1);
