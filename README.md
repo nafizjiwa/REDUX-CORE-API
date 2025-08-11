@@ -23,7 +23,7 @@
     - connect
 
 ### 2. CREATE A REDUX STORE
-- createStore() is a Redux API tool 
+- createStore() is a Redux API tool from REDUX library
 - A Reducer functions updates State. It receives actions --> returns the store's next state.
 - The action object describes how to change the state
 - Store's function - Holds state
@@ -37,7 +37,7 @@
 #### The Redux helper Function to Create a Store
 - Store's structure:
 
-        import { createStore } from 'redux';   --> 1st Import helper funciton:
+        import { createStore } from 'redux';   --> 1st Import REDUX helper function:
           const initialState = 0                 --> 3rd render initialState
           export function ActionCreatorName() {     --> 4th Create + export Action Creators
               return {type: `actiontype`}
@@ -127,9 +127,11 @@
         
 ### 6. CONNECT A REDUX STORE TO A UI
 -REDUX without REACT lacks a user interface
+- TO CONNECT A STORE TO REACT SO THAT REACT CAN MANGE STATE AND THEN SHOW THE
+- CHANGES TO THE STATE TO THE USER
 -App.js-file
 
-    Store's action creators imported
+    Store's action creators imported in
         import { actionCreator1, actionCreator2 } from "./store";
     Action creators are dispatched within click handlers if a buttons exist
         const clickHandlerFunction = () => {
@@ -137,10 +139,21 @@
           }
     App component expects 2 props: state and dispatch passed from index.js
         function App({ state, dispatch}) {
-                return ()
+                return ( code to render here )
             }
 -index.js-file
 
-    Store is imported --> import { store } from './store.js'
+    Store is imported in --> import { store } from './store.js'
     Pass store and dispatch to App
     <App state={store.getState()} dispatch={store.dispatch} />);
+    Subscribe a change listerner to the store 
+            - so the UI is updated when state changes
+            - subscribe the index.js render()
+            - so App is always re-rendered when changes to state which
+            - can update the UI for the user to see changes
+    store.subscribe(listener); --> listener here is the render function
+    store.subscribe(render);
+
+  |REVIEW|NOTES|
+  |:---|:---|
+  |||
