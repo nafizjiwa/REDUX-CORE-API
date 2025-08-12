@@ -7,7 +7,8 @@
 - Redux has core APIs for creating and managing a store, dispatching actions and reducers.
 - Redux Toolkit and React-Redux offer additional APIs 
 - Redux apps use one way data flow managed by the store
-    - STATE->DISPATCHED ACTIONS->STORE's RREDUCER->NEXT STATE
+    - State → View → Actions → State → View … 
+    - STATE->DISPATCHED ACTIONS->STORE's REDUCER->NEXT STATE
 - CORE REDUX API'S ARE
     - createStore
     - combineReducers
