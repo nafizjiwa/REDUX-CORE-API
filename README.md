@@ -26,26 +26,27 @@
 ### 2. CREATE A REDUX STORE --createStore(reducerFunction)--
 - createStore() is a Redux API tool from REDUX library
 - A Reducer functions updates State. It receives actions --> returns the store's next state.
-- The action object describes how to change the state
-- Store's function - Holds state
-                   - Receives dispatched action
-                   - Execute the reducer
-                   - Enforces one way data flow
+- The action object { type: , payload:} describes how to change the state
+- The Store's function - Holds state
+                       - Receives dispatched action
+                       - Execute the reducer
+                       - Enforces one way data flow
   
         - We can manually do what the store does: Execute a Reducer--
         newState = callReducerFunction(withCurrentState, { type: 'andAction' });
 
-#### The Redux helper Function to Create a Store  --createStore(reducerFunction)-->Return store object
+#### The Redux helper Function to Create a Store  
+#### -- createStore(inputREDUCERFunction) --> Returns STORE OBJECT
 - Store's structure:
 
         import { createStore } from 'redux';   --> 1st Import REDUX helper function:
-          const initialState = 0                 --> 3rd render initialState
-          export function ActionCreatorName() {     --> 4th Create + export Action Creators
+          const initialState = 0                 --> 2nd render initialState
+          export function ActionCreatorName() {     --> 3rd Create + export Action Creators
               return {type: `actiontype`}
           }
           const reducerName = (state=initialState, action) => {
               switch(action.type){
-                  case'1':{                            --> 5th Create reducer with
+                  case'1':{                            --> 4th Create reducer with
                       return updatedState;                    types of actions
                   }
                   default: {
@@ -54,7 +55,8 @@
               }
           }
          export const store = createStore(takesInREDUCER_FUNCTION)
-          --> 2nd Create a 'store' object with a call
+          --> 5th Create a 'store' object with a create store call
+##### `createStore(inputREDUCER) --> returns STORE OBJECT`
 
 
 ### 3. DISPATCH ACTIONS TO THE STORE
