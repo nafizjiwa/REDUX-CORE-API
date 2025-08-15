@@ -23,7 +23,7 @@
     - useDipatch
     - connect
 
-### 2. CREATE A REDUX STORE
+### 2. CREATE A REDUX STORE --createStore(reducerFunction)--
 - createStore() is a Redux API tool from REDUX library
 - A Reducer functions updates State. It receives actions --> returns the store's next state.
 - The action object describes how to change the state
@@ -32,10 +32,10 @@
                    - Execute the reducer
                    - Enforces one way data flow
   
-        --Manually do what the store does execute Reducer--
+        - We can manually do what the store does: Execute a Reducer--
         newState = callReducerFunction(withCurrentState, { type: 'andAction' });
 
-#### The Redux helper Function to Create a Store
+#### The Redux helper Function to Create a Store  --createStore(reducerFunction)-->Return store object
 - Store's structure:
 
         import { createStore } from 'redux';   --> 1st Import REDUX helper function:
